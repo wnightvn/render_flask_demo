@@ -28,6 +28,13 @@ def download_file(filename):
     except Exception as e:
         return jsonify({"error": str(e)}), 404  
 
+@app.route('/test/bdc', methods=['GET'])
+def get_bdc():
+    try:
+        return 'Hello, World!'
+    except Exception as e:
+        return jsonify({"error": str(e)}), 404  
+
 @app.route('/test/bdc', methods=['POST'])
 def post_data():
     # Get JSON data from the request body
@@ -47,7 +54,6 @@ def put_data():
 
     # Send back the response as JSON
     return jsonify(response), 200
-
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug=True)
